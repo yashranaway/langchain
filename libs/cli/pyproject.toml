@@ -1,6 +1,6 @@
 [build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 authors = [{ name = "Erick Friis", email = "erick@langchain.dev" }]
@@ -15,7 +15,7 @@ dependencies = [
     "gritql>=0.2.0,<1.0.0",
 ]
 name = "langchain-cli"
-version = "0.0.37"
+version = "1.0.0a1"
 description = "CLI for interacting with LangChain"
 readme = "README.md"
 
@@ -29,9 +29,18 @@ langchain = "langchain_cli.cli:app"
 langchain-cli = "langchain_cli.cli:app"
 
 [dependency-groups]
-dev = ["pytest>=7.4.2,<9.0.0", "pytest-watcher>=0.3.4,<1.0.0"]
-lint = ["ruff>=0.13.1,<0.14", "mypy>=1.18.1,<1.19"]
-test = ["langchain-core", "langchain"]
+dev = [
+    "pytest>=7.4.2,<9.0.0",
+    "pytest-watcher>=0.3.4,<1.0.0"
+]
+lint = [
+    "ruff>=0.13.1,<0.14",
+    "mypy>=1.18.1,<1.19"
+]
+test = [
+    "langchain-core",
+    "langchain"
+]
 typing = ["langchain"]
 test_integration = []
 
